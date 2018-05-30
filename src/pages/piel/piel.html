@@ -1,0 +1,88 @@
+<ion-header >
+  <ion-navbar color="primary" >
+    <ion-title >
+      <ion-icon name="menu" menuToggle></ion-icon>
+      MI PIEL
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content text-center class="icons-basic-page">
+<ion-grid>
+  <ion-row>
+      <ion-col >
+
+ <div [ngSwitch]="type">
+       <div *ngSwitchCase = "'principal'">
+            <div class="textp"> 
+               <p>En esta sección encontraras información sobre las principales afecciones que pueden afectar a la piel.</p>
+              <p>Las micosis superficiales por distintos grupos de hongos patógenos para el hombre, que invaden las estructuras queratinizadas, es decir estrato corneo, pelo, uñas y/o las mucosas.</p>
+              <p>Este tipo de micosis están limitadas a la piel, pelo, uñas, y las mucosas siendo muy frecuentes y ocurriendo en todas las edades.</p>
+            </div>
+            <br>
+
+            <div class="bottomright">
+              <button (click)="changeTina()" style="background-color: #3f9275;" ion-button>Siguiente <ion-icon name="arrow-forward"></ion-icon>
+              </button>
+            </div>  
+		</div>
+           
+        
+        <div *ngSwitchCase = "'tina'">
+            <br>
+            <div class="textp"> 
+              <h1 style="text-align:center ">TIÑA</h1>
+            </div>
+            <br>
+            <div class="textp"> 
+              <p>Dentro de los hongos que infectan la piel y estructuras relacionadas, un grupo importante lo constituyen los denominados dermatofitos que son los responsables de las tiñas, o infecciones por dermatofitos de piel, pelos o uñas, algunas tan conocidas como el pie de atleta o tinea pedís.</p>
+              <br>
+            </div>
+            
+            <div class="bottomright">
+              <button (click)="changePiti()" style="background-color: #3f9275;" ion-button>Siguiente <ion-icon name="arrow-forward"></ion-icon>
+              </button>
+            </div>        
+        </div>
+
+         <div *ngSwitchCase = "'pitiriasis'">
+         	<br>
+            <div class="textp"> 
+              <h1 style="text-align:center ">PITIRIASIS VERSICOLOR</h1>
+            </div>
+            <br>
+            <div class="textp"> 
+              <p>Localizadas en el tronco, sobre todo en los hombros y en la espalda. La aparición de las lesiones se relaciona con factores de la persona, ya que el hongo es un comensal, es decir habita normalmente en la piel de personas sanas.</p>
+              
+              <br>
+            </div>
+            
+            <div class="bottomright">
+              <button (click)="changeCandi()" style="background-color: #3f9275;" ion-button>Siguiente <ion-icon name="arrow-forward"></ion-icon>
+              </button>
+            </div>         
+        </div>
+
+        <div *ngSwitchCase = "'candidiasis'">
+          <br>
+            <div class="textp"> 
+              <h1 style="text-align:center ">CANDIDIASIS</h1>
+            </div>
+            <br>
+            <div class="textp"> 
+              <p>Localizadas en el tronco, sobre todo en los hombros y en la espalda. La aparición de las lesiones se relaciona con factores de la persona, ya que el hongo es un comensal, es decir habita normalmente en la piel de personas sanas.</p>
+              <br>
+            </div>
+            
+            <div class="bottomright">
+              <button (click)="changePrincipal()" style="background-color: #3f9275;" ion-button>Finalizar
+              </button>
+            </div>     
+        </div>
+       
+ </div>
+
+      </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>

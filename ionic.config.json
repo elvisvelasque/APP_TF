@@ -1,0 +1,12 @@
+{
+  "name": "ionic-app-example",
+  "app_id": "",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [{
+  	"path" : "/classify_image/classify",
+  	"proxyUrl":"https://micoskin.herokuapp.com/classify_image/classify"
+  }]
+}
