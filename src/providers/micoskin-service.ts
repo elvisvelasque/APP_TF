@@ -7,7 +7,7 @@ import 'rxjs/add/operator/toPromise';
 export class micoskinService {
 
   public name = "";
-  private mEndpoint = 'https://micoskin.herokuapp.com/';
+  private mEndpoint = 'https://micoskin.herokuapp.com';
 
   constructor(
     public http: Http
@@ -31,9 +31,10 @@ export class micoskinService {
     let reqHeaders = new Headers();
     reqHeaders.set('Accept','application/json');
     reqHeaders.set('Acces-Control-Allow-Origin','*');
+    reqHeaders.set('Access-Control-Allow-Methods','POST, GET, OPTIONS, PUT');
     let options = new RequestOptions({ headers: reqHeaders});
     console.log(options);
-    return this.http.post("/classify_image/classify/api/", formData, options)
+    return this.http.post(this.getUrl("/classify_image/classify/api/") , formData, options)
       .toPromise()
       .then(this.extractData);
   }
