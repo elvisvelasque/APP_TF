@@ -2,7 +2,7 @@
   <ion-navbar color="primary" >
     <ion-title >
       <ion-icon name="menu" menuToggle></ion-icon>
-      MICOSKIN
+      Focus Catarat
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -14,10 +14,11 @@
 
  <div [ngSwitch]="type">
        <div *ngSwitchCase = "'principal'">
+            <img src='assets/img/PORTADA.jpg'/>
             <div class="textp"> 
-              <p>Esta aplicación te permite realizar un pre-diagnóstico para identificar en su piel posibles apariciones de Micosis superficial.</p>
-              <p>Evitando daños mayores y brindando recomendaciones para su correcto tratamiento.</p>
-              <p>Sólo activa la cámara y empecemos</p>
+              <p style='text-align: center;'>Así se ve un ojo con cataratas.</p>
+              <br>
+              <p style='text-align: center;'><b>Para empezar solo seleccione el ícono y empecemos</b></p>
               <br>
             </div>
             <br>
@@ -36,7 +37,7 @@
             <br>
             <img [src]="chosenPicture || placeholder" onerror="this.src='assets/img/card-sf.png'" />
             <div class="bottomright">
-              <button (click)="getAccuracy()" style="background-color: #3f9275;" ion-button>Siguiente <ion-icon name="arrow-forward"></ion-icon>
+              <button (click)="getAccuracy()" color="verde" ion-button>Siguiente <ion-icon name="arrow-forward"></ion-icon>
               </button>
             </div>        
         </div>
@@ -48,10 +49,15 @@
               <p>Comparando con casos similares</p>
             </div>
             <br>
-            <img [src]="chosenPicture || placeholder" onerror="this.src='assets/img/card-sf.png'" />
+            <!--<img [src]="panneaux[0].img" />-->
+            <img src={{micoskinPicture}} />
+            <!--<p>{{micoskinPicture}}</p>
+            <img src='assets/img/piel/tinea_negra.jpg'/>-->
+
+
             
             <div class="bottomright">
-              <button (click)="changeDiagnostico()" style="background-color: #3f9275;" ion-button>Ver resultados<ion-icon name="arrow-forward"></ion-icon>
+              <button (click)="changeDiagnostico()" color="verde" ion-button>Ver resultados<ion-icon name="arrow-forward"></ion-icon>
               </button>
             </div>        
         </div>
@@ -70,7 +76,7 @@
                             <ion-label>RESULTADOS:  {{chosenPicture2[0]['category']}} </ion-label>
                         </ion-item> 
                         <ion-item>
-                            <ion-label>GRADO DE CONFIANZA:  {{chosenPicture2[0]['percent']}}%</ion-label>
+                            <ion-label>GRADO DE SENSIBILIDAD:  {{chosenPicture2[0]['percent']*0.93}}%</ion-label>
                         </ion-item>
                         <ion-item>
                             <ion-label>FECHA: {{myActualDate}}</ion-label>
@@ -81,9 +87,23 @@
            
                       </ion-card-content>
 
-                      <button (click)="changePrincipal()" color="verde" ion-button full>FINALIZAR</button>
+                      <button (click)="changePrincipal()" color="verde" ion-button full>ACEPTAR</button>
                   </ion-card> 
                   
+        </div>
+
+        <div *ngSwitchCase = "'nada'">
+            <br>
+            <h1 style="text-align:center ">RESULTADOS</h1>
+            <div class="textp"> 
+              <p style='text-align: justify;'>No se ha detectado alguna anomalía.</p>
+              <p style='text-align: justify;'>Si tiene dudas recomendamos consultar con un doctor.</p>
+            </div>
+            <br>
+            <img [src]="chosenPicture || placeholder" onerror="this.src='assets/img/card-sf.png'" />
+            
+            <button (click)="changePrincipal()" color="verde" ion-button full>ACEPTAR</button>
+       
         </div>
        
  </div>

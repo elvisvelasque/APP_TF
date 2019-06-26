@@ -7,6 +7,6 @@
   "type": "ionic-angular",
   "proxies": [{
   	"path" : "/classify_image/classify",
-  	"proxyUrl":"https://micoskin.herokuapp.com/classify_image/classify"
+  	"proxyUrl":"https://cataratasserver.herokuapp.com/classify_image/classify/"
   }]
 }

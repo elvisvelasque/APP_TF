@@ -2,13 +2,36 @@
   <ion-navbar color="primary" >
     <ion-title >
       <ion-icon name="menu" menuToggle></ion-icon>
-      DIAGNOSTICO
+      HISTORIAL
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content text-center class="icons-basic-page">
-
-
+<ion-content>
+<ion-searchbar></ion-searchbar>
+<ion-list>
+     <ion-item *ngIf="tasks.length == 0"> 
+       Aun no tienes historiales
+       <ion-list>
+ 
+</ion-list>
+     </ion-item>
+    <ion-item-sliding *ngFor= "let task of tasks; let i= index">
+   	  <ion-item>	
+	  <ion-thumbnail item-start>      
+	   <img src={{task.imagen}}>
+      </ion-thumbnail>
+      <h2>{{ task.category }}</h2>
+      <p>{{ task.percent}}%</p>
+      <ion-note item-end>{{ task.fecha}}</ion-note>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deleteTask(task, i)">
+          <ion-icon name="trash"></ion-icon>
+          Borrar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 
 </ion-content>

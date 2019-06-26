@@ -7,7 +7,7 @@ import 'rxjs/add/operator/toPromise';
 export class micoskinService {
 
   public name = "";
-  private mEndpoint = 'https://micoskin.herokuapp.com';
+  private mEndpoint = 'https://cataratasserver.herokuapp.com';
 
   constructor(
     public http: Http

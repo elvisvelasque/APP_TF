@@ -14,14 +14,14 @@
  <div [ngSwitch]="type">
        <div *ngSwitchCase = "'principal'">
             <div class="textp"> 
-               <p>En esta sección encontraras información sobre las principales afecciones que pueden afectar a la piel.</p>
-              <p>Las micosis superficiales por distintos grupos de hongos patógenos para el hombre, que invaden las estructuras queratinizadas, es decir estrato corneo, pelo, uñas y/o las mucosas.</p>
-              <p>Este tipo de micosis están limitadas a la piel, pelo, uñas, y las mucosas siendo muy frecuentes y ocurriendo en todas las edades.</p>
+               <p style='text-align: justify;'>En esta sección encontrarás información sobre las principales afecciones que pueden afectar a la piel.</p>
+              <p style='text-align: justify;'>Las micosis superficiales por distintos grupos de hongos patógenos para el hombre, que invaden las estructuras queratinizadas, es decir estrato corneo, pelo, uñas y/o las mucosas.</p>
+              <p style='text-align: justify;'>Este tipo de micosis están limitadas a la piel, pelo, uñas, y las mucosas siendo muy frecuentes y ocurriendo en todas las edades.</p>
             </div>
             <br>
 
             <div class="bottomright">
-              <button (click)="changeTina()" style="background-color: #3f9275;" ion-button>Siguiente <ion-icon name="arrow-forward"></ion-icon>
+              <button (click)="changeTina()" color="verde" ion-button>Siguiente <ion-icon name="arrow-forward"></ion-icon>
               </button>
             </div>  
 		</div>
@@ -30,16 +30,15 @@
         <div *ngSwitchCase = "'tina'">
             <br>
             <div class="textp"> 
-              <h1 style="text-align:center ">TIÑA</h1>
+              <h1 style="text-align:center ">TIÑA NEGRA</h1>
             </div>
-            <br>
             <div class="textp"> 
-              <p>Dentro de los hongos que infectan la piel y estructuras relacionadas, un grupo importante lo constituyen los denominados dermatofitos que son los responsables de las tiñas, o infecciones por dermatofitos de piel, pelos o uñas, algunas tan conocidas como el pie de atleta o tinea pedís.</p>
-              <br>
+              <p style='text-align: justify;'>Se trata de un hongo dematiáceo polimórfico que inicialmente crece como levadura negra y después se transforma en moho. H. werneckii es halotolerante y halofílico, es decir, crece en medio acuoso y se adapta con facilidad a condiciones de hipersalinidad. se caracteriza por la presencia de parches de color marrón-negro sin dolor.</p>
             </div>
+            <img src='assets/img/piel/TINEA_NEGRA.jpg'/>
             
             <div class="bottomright">
-              <button (click)="changePiti()" style="background-color: #3f9275;" ion-button>Siguiente <ion-icon name="arrow-forward"></ion-icon>
+              <button (click)="changePiti()" color="verde" ion-button>Siguiente <ion-icon name="arrow-forward"></ion-icon>
               </button>
             </div>        
         </div>
@@ -49,15 +48,14 @@
             <div class="textp"> 
               <h1 style="text-align:center ">PITIRIASIS VERSICOLOR</h1>
             </div>
-            <br>
             <div class="textp"> 
-              <p>Localizadas en el tronco, sobre todo en los hombros y en la espalda. La aparición de las lesiones se relaciona con factores de la persona, ya que el hongo es un comensal, es decir habita normalmente en la piel de personas sanas.</p>
+              <p style='text-align: justify;'>La pitiriasis versicolor es una micosis de piel muy común causada por el hongo del género Malassezia Las lesiones de pitiriasis versicolor generalmente se presentan como manchas hipo pigmentadas (más claras que la piel), por lo tanto, la enfermedad también se denomina tiña de la piel manchada.</p>
               
-              <br>
             </div>
+            <img src='assets/img/piel/PITIRIASIS_VERSICOLOR.jpg'/>
             
             <div class="bottomright">
-              <button (click)="changeCandi()" style="background-color: #3f9275;" ion-button>Siguiente <ion-icon name="arrow-forward"></ion-icon>
+              <button (click)="changeCandi()" color="verde" ion-button>Siguiente <ion-icon name="arrow-forward"></ion-icon>
               </button>
             </div>         
         </div>
@@ -65,16 +63,15 @@
         <div *ngSwitchCase = "'candidiasis'">
           <br>
             <div class="textp"> 
-              <h1 style="text-align:center ">CANDIDIASIS</h1>
+              <h1 style="text-align:center ">TINEA CORPORIS</h1>
             </div>
-            <br>
             <div class="textp"> 
-              <p>Localizadas en el tronco, sobre todo en los hombros y en la espalda. La aparición de las lesiones se relaciona con factores de la persona, ya que el hongo es un comensal, es decir habita normalmente en la piel de personas sanas.</p>
-              <br>
+              <p style='text-align: justify;'>La tiña corporal es una infección de la piel causada por un hongo. Se caracteriza por la presencia de una erupción pequeña, en forma de anillo o círculo, que aparece en diferentes regiones de la piel, excepto en el cuero cabelludo, la ingle, las palmas de las manos y plantas de los pies.</p>
             </div>
+            <img src='assets/img/piel/TINEA_CORPORIS.jpg'/>
             
             <div class="bottomright">
-              <button (click)="changePrincipal()" style="background-color: #3f9275;" ion-button>Finalizar
+              <button (click)="changePrincipal()" color="verde" ion-button>Finalizar
               </button>
             </div>     
         </div>

@@ -14,19 +14,19 @@ export class slidesPage {
 
   slides = [
     {
-      title: "Bienvenido a Micoskin!",
+      title: "Focus Catarat",
       description: "",
-      image: "assets/img/slides/slide0.png",
+      image: "assets/img/slides/slide_.png",
     },
     {
-      title: "¿Que es Micoskin?",
-      description: "<b>Micoskin</b> es una aplicacion que te permite detectar si un paciente tiene mucosidad superficial y realizar un pre diagnostico.",
-      image: "assets/img/slides/slide0.png",
+      title: "¿Focus Catarat?",
+      description: "<b>Focus Catarat</b> es una aplicación móvil con el objetivo de brindar un sistema de apoyo al diagnóstico preliminar para una mejor precisión diagnostica.",
+      image: "assets/img/slides/slide_.png",
     },
     {
-      title: "¿Que es la mucosidad superficial?",
-      description: "La <b>mucosidad superficial</b> es...",
-      image: "assets/img/slides/slide0.png",
+      title: "¿Para qué sirve?",
+      description: "Esta aplicación permite realizar un pre-diagnóstico para determinar la presencia de catarata senil en la lente natural del ojo, que se encuentra detrás de la pupila.",
+      image: "assets/img/slides/slide_.png",
     }
   ];
 

@@ -21,6 +21,10 @@ import { Camera } from '@ionic-native/camera';
 //import { Http } from '@angular/http';
 import { micoskinService } from '../providers/micoskin-service';
 
+//SQLITE
+import { SQLite } from '@ionic-native/sqlite';
+import { dbService } from '../providers/database-service';
+
 
 
 @NgModule({
@@ -58,6 +62,7 @@ import { micoskinService } from '../providers/micoskin-service';
   providers: [
   micoskinService,
   CameraProvider,Camera,
+  SQLite,dbService,
   {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
