@@ -14,15 +14,24 @@
  		<div class="textp"> 
               <br>
               <h1 style="text-align:center "><b>Registro</b></h1>
-              <br>
-              <ion-input placeholder="Nombres:"></ion-input>
-              <ion-input placeholder="Apellidos:"></ion-input>
-              <ion-input placeholder="DNI:"></ion-input>
-              <ion-input placeholder="Género:"></ion-input>
-              <br>
 
-              <button ion-button color="primary" block outline>Registrar</button>
-
+              <form (ngSubmit)="onSubmit()">
+              <ion-input placeholder="Nombres:" required [(ngModel)]="model.nombres" name="nombres"></ion-input>
+              <ion-input placeholder="Apellidos:" required [(ngModel)]="model.apellidos" name="apellidos"></ion-input>
+              <ion-input placeholder="DNI:" type="number" [(ngModel)]="model.dni" name="dni"></ion-input>
+              <ion-item>
+              <ion-label for="sexo">  Sexo</ion-label>
+                  <ion-select class="form-control" id="sexo"
+                required
+                [(ngModel)]="model.sexo" name="sexo"
+                  >
+                  <option *ngFor="let sex of sexo" [value]="sex">{{sex}}</option>
+                  </ion-select>
+              </ion-item>
+              <br>
+              <br>
+              <button ion-button color="primary" (click)="nuevaPersona()" block outline>Registrar</button>
+              </form>
  		</div>
  	</ion-col>
   </ion-row>

@@ -5,7 +5,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { HomePage } from '../pages/home/home';
 import { slidesPage } from '../pages/slides/slides';
 
-//import { acercaPage } from '../pages/acerca/acerca';
+import { acercaPage } from '../pages/acerca/acerca';
 import { creditosPage } from '../pages/creditos/creditos';
 import { diagnosticosPage } from '../pages/diagnosticos/diagnosticos';
 import { fotografiasPage } from '../pages/fotografias/fotografias';
@@ -39,7 +39,7 @@ export class MyApp {
       //{title: 'Mi Piel', component: pielPage,icon: 'body', badge: ''},
       {title: 'Historial', component: diagnosticosPage,icon: 'medkit', badge: ''},
       //{title: 'Recomendaciones', component: recomendacionesPage,icon: 'clipboard', badge: ''},
-      //{title: 'Registrar Paciente', component: acercaPage,icon: 'people', badge: ''},
+      {title: 'Registrar Paciente', component: acercaPage,icon: 'people', badge: ''},
 
       {title: 'Mis Fotografias', component: fotografiasPage,icon: 'image', badge: ''},
       //{title: 'Preguntas Frecuentes', component: preguntasPage,icon: 'help-circle', badge: ''},
@@ -71,6 +71,7 @@ export class MyApp {
     console.log(db);
     this.dbservice.setDatabase(db);
     return this.dbservice.createTable();
+    
   })
   .catch(error =>{
     console.error(error);

@@ -25,6 +25,10 @@ export class HomePage {
   myActualDate: string;
 
   type: string;
+  users: any[] = [];
+  dni: string;
+  //model = {"dni":""};
+  docs: any[] = [];
 
   constructor(public navCtrl: NavController,
 
@@ -35,7 +39,8 @@ export class HomePage {
     public platform: Platform,
     public loadingCtrl: LoadingController) {
 
-    this.type = "principal"
+    this.type = "principal";
+    this.getAllUsers();
     //this.panneaux = [];
 
     
@@ -51,6 +56,11 @@ export class HomePage {
 
    changePrincipal() {
     this.type= "principal"
+   }
+
+   changePrincipal2() {
+    this.createTask(); 
+    this.type= "principal";
    }
 
    changePicture() {
@@ -152,12 +162,12 @@ export class HomePage {
       if (this.chosenPicture2[0]['percent']>=85){
       	if(this.chosenPicture2[0]['category']=='catarata cortical'){
       		this.micoskinPicture='assets/img/piel/catarata_cortical.jpg'
-      		this.createTask()
+      		//this.createTask()
           this.type="search"
       	}else{
           if(this.chosenPicture2[0]['category']=='catarata nuclear'){
             this.micoskinPicture='assets/img/piel/catarata_nuclear.jpg'
-            this.createTask()
+            //this.createTask()
             this.type="search"
           }else{
           this.type="nada"
@@ -179,8 +189,33 @@ export class HomePage {
     });
   }
 
+  getAllUsers(){
+  this.dbservice.getUsers()
+  .then(users => {
+    this.users = users;
+  })
+  .catch( error => {
+    console.error( error );
+  });
+}
+submitted = false;
+ 
+onSubmit() { this.submitted = true;
+              this.createTask(); };
+
+   getAllDocs(){
+  this.dbservice.getUsersDocs()
+  .then(docs => {
+    this.docs = docs;
+  })
+  .catch( error => {
+    console.error( error );
+  });
+}
+
+
  createTask(){
-  this.dbservice.create(this.chosenPicture2[0]['category'],this.chosenPicture2[0]['percent'],this.myActualDate,this.chosenPicture)
+  this.dbservice.create(this.chosenPicture2[0]['category'],this.chosenPicture2[0]['percent'],this.myActualDate,this.chosenPicture,this.dni)
   .then(response  => {
   	console.log("registro creado correctamente")
   })

@@ -8,22 +8,56 @@
 </ion-header>
 
 <ion-content>
-<ion-searchbar></ion-searchbar>
-<ion-list>
+<ion-searchbar>Buscar</ion-searchbar>
+
+<div [ngSwitch]="type">
+<div *ngSwitchCase = "'principal'">
+    <ion-list>
+    <ion-item *ngIf="users.length == 0"> 
+          Aun no tienes historiales
+          <ion-list>
+          </ion-list>
+    </ion-item>
+
+    <ion-item-sliding *ngFor= "let user of users; let i= index">
+   	  <ion-item>	
+      <ion-avatar slot="start">
+	   <img src='../../assets/img/user.png'>
+      </ion-avatar>
+      <ion-label>
+      <h2>{{ user.nombres + ' ' + user.apellidos }}</h2>
+      <p>{{ user.sexo}}</p>
+      <ion-note item-end>{{ user.dni}}</ion-note>
+      </ion-label>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="secondary" (click)="getAllFotos(user)">
+          <ion-icon name="image"></ion-icon>
+          Historial
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    </ion-list>
+</div>
+
+<div *ngSwitchCase = "'fotos'">
+    <ion-list>
      <ion-item *ngIf="tasks.length == 0"> 
-       Aun no tienes historiales
+       Aun no tienes fotos
        <ion-list>
- 
-</ion-list>
+       </ion-list>
      </ion-item>
+     
     <ion-item-sliding *ngFor= "let task of tasks; let i= index">
    	  <ion-item>	
 	  <ion-thumbnail item-start>      
 	   <img src={{task.imagen}}>
       </ion-thumbnail>
+      <ion-label>
       <h2>{{ task.category }}</h2>
       <p>{{ task.percent}}%</p>
       <ion-note item-end>{{ task.fecha}}</ion-note>
+      </ion-label>
       </ion-item>
       <ion-item-options side="right">
         <button ion-button color="danger" (click)="deleteTask(task, i)">
@@ -32,6 +66,25 @@
         </button>
       </ion-item-options>
     </ion-item-sliding>
-  </ion-list>
+    </ion-list>
+</div>
+</div>
+
+
 
 </ion-content>
+
+<script>
+    const searchbar = document.querySelector('ion-searchbar');
+    const items = Array.from(document.querySelector('ion-list').children);
+    searchbar.addEventListener('ionInput', handleInput);
+    function handleInput(event) {
+      const query = event.target.value.toLowerCase();
+      requestAnimationFrame(() => {
+        items.forEach(item => {
+          const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
+          item.style.display = shouldShow ? 'block' : 'none';
+        });
+      });
+    }
+  </script>

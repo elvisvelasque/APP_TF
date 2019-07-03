@@ -76,18 +76,26 @@
                             <ion-label>RESULTADOS:  {{chosenPicture2[0]['category']}} </ion-label>
                         </ion-item> 
                         <ion-item>
-                            <ion-label>GRADO DE SENSIBILIDAD:  {{chosenPicture2[0]['percent']*0.93}}%</ion-label>
+                            <ion-label>GRADO DE SENSIBILIDAD:  {{chosenPicture2[0]['percent']-0.3}}%</ion-label>
                         </ion-item>
                         <ion-item>
                             <ion-label>FECHA: {{myActualDate}}</ion-label>
                         </ion-item>
-                        </ion-list>
+                        <ion-item>
+                        <ion-label>SELECCIONE DNI : </ion-label>
+                        <ion-select class="form-control" id="dni"
+                      required
+                      [(ngModel)]="dni" name="dni"
+                        >
+                        <!--[value]="{{user.dni}}"-->
+                        <option *ngFor="let user of users" [value]="user.dni" >{{user.dni}}</option>
+                        </ion-select>
+                        </ion-item>
+                      </ion-list>
 
-                        
-           
                       </ion-card-content>
 
-                      <button (click)="changePrincipal()" color="verde" ion-button full>ACEPTAR</button>
+                      <button (click)="changePrincipal2()" color="verde" ion-button full>ACEPTAR</button>
                   </ion-card> 
                   
         </div>
@@ -101,6 +109,7 @@
             </div>
             <br>
             <img [src]="chosenPicture || placeholder" onerror="this.src='assets/img/card-sf.png'" />
+              
             
             <button (click)="changePrincipal()" color="verde" ion-button full>ACEPTAR</button>
        
